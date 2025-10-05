@@ -260,7 +260,9 @@ def get_birthdate(startAge = None, endAge = None, _format = "%d %b, %Y"):
 def get_address():
 	full_addr = []
 	addrParam = ['street', 'landmark', 'area', 'city', 'state', 'country', 'pincode']
-	for i in range(5,12):
+	"""Помилка була у послідовності колонок файлу, привʼязка до послідовності погана ідея
+	тут як варіант взагалі переписати функцію, щоб дивилась на імʼя колонки, а не послідовність"""
+	for i in range(4,10):
 		addrFile = csv.reader(open(full_path('data.csv'), 'r'))
 		allAddrs = []
 		for addr in addrFile:
